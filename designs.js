@@ -10,7 +10,6 @@ function makeGrid() {
     const height = $('#inputHeight').val();
     const weight = $('#inputWeight').val();
     const table = $('#pixelCanvas');
-    const color = $('#colorPicker').val();
     table.children().remove();
 
     for (let p = 0; p < height; p++) {
@@ -21,6 +20,7 @@ function makeGrid() {
     }
 
     table.on('click', 'td', function() {
+        var color = $('#colorPicker').val();
         if ($(this).attr('style')) {
             $(this).removeAttr('style')
         } else {
